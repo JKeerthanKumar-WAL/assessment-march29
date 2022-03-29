@@ -21,13 +21,13 @@ const Login = () => {
         axios
             .get('/usertable/loggeduser')
             .then((res) => {
-                setShow(res.data);
+                setShow(JSON.stringify(res.data.data));
             })
             .catch((err) => {
                 console.log(err);
             });
-        console.log(show);
     };
+    console.log(show);
     return (
         <div className="container-fluid text-center">
             <h1>Log In</h1>
@@ -58,29 +58,15 @@ const Login = () => {
             >
                 <b>View Details</b>
             </button>
+            <br />
             {!status ? (
                 ''
             ) : (
                 <div>
-                    <table>
-                        <tr>
-                            <th>Id</th>
-                            <th>User Name</th>
-                            <th>Password</th>
-                            <th>Date_of_creation</th>
-                        </tr>
-                        <tr>
-                            <td>{show.id}</td>
-                        </tr>
-                        {/* {show.map((val) => {
-                            <tr>
-                                <td>{val.id}</td>
-                                <td>{val.username}</td>
-                                <td>{val.password}</td>
-                                <td>{val.date_of_creation}</td>
-                            </tr>;
-                        })} */}
-                    </table>
+                    <h5>
+                        <b> User Details : </b>
+                        <span>{show}</span>
+                    </h5>
                 </div>
             )}
         </div>

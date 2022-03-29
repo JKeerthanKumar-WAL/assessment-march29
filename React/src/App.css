@@ -16,13 +16,3 @@ h1 {
     color: darkblue;
     text-align: center;
 }
-.table {
-    margin: auto;
-    max-width: fit-content;
-}
-table {
-    background-color: lightskyblue;
-}
-tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
