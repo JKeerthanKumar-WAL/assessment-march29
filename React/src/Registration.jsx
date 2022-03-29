@@ -1,8 +1,6 @@
 import axios from 'axios';
-import { useEffect, useState } from 'react';
 
 const Registration = () => {
-    const [registration, setRegistration] = useState([]);
     const createUser = (event) => {
         event.preventDefault();
         const userObject = {
@@ -13,7 +11,6 @@ const Registration = () => {
         axios
             .post('/usertable', userObject)
             .then((res) => {
-                console.log(registration);
                 console.log(res.data);
             })
             .catch((err) => {
